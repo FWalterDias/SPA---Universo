@@ -51,7 +51,7 @@ export class Routes {
 
                 break;
             
-            case '/SPA-Universo/pages/notFound/notFound.html':
+            case '/pages/notFound/notFound.html':
                 header.style.display = "none";
                 page.style.background = "#FFFFFF";
                 page.style.color = "#000000";
