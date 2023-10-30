@@ -24,5 +24,28 @@ export class Routes {
         .then(html => {
             document.querySelector("#main").innerHTML = html;
         });
+
+        this.background(pathname);
+    }
+
+    background(pathname){
+        const page = document.querySelector(".app");
+        
+        switch (pathname) {
+            case '/':
+                page.style.background = "url('./assets/home.png') no-repeat center /cover";
+                break;
+
+            case '/oUniverso':
+                page.style.background = "url('./assets/universo.png') no-repeat center /cover";
+                break;
+
+            case '/exploracao':
+                page.style.background = "url('./assets/exploracao.png') no-repeat center /cover";
+                break;
+
+            default:
+                break;
+        }
     }
 } 
