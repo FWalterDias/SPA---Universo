@@ -93,6 +93,10 @@ main p {
 
 .home button {
     border: none;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     padding: 1.2rem 3.2rem;
 
@@ -102,7 +106,6 @@ main p {
 
     color: #FFFFFF;
 
-    text-align: center;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 2.4rem;
@@ -113,5 +116,8 @@ main p {
 
 .home button:hover{
     background-color: #FFFFFF;
+}
+
+.home button:hover a{
     color: #02799D;
 }
