@@ -17,7 +17,7 @@ export class Routes {
     handle() {
         const { pathname } = window.location;
 
-        const route = this.routes[pathname] || this.routes[404]; 
+        const route = this.routes[pathname] || this.routes['/SPA-Universo/404']; 
 
         fetch(route)
         .then(data => data.text())
@@ -31,19 +31,21 @@ export class Routes {
     background(route){
         const page = document.querySelector(".app");
         const header = document.querySelector("header");
+
+        console.log(route);
         
         switch (route) {
-            case '/SPA-Universo/pages/home/home.html':
+            case '/pages/home/home.html':
                 page.style.background = "url('./assets/home.png') no-repeat center /cover";
                 page.style.color = "#FFFFFF";
                 break;
 
-            case '/SPA-Universo/pages/oUniverso/oUniverso.html':
+            case '/pages/oUniverso/oUniverso.html':
                 page.style.background = "url('./assets/universo.png') no-repeat center /cover";
                 page.style.color = "#FFFFFF";
                 break;
 
-            case '/SPA-Universo/pages/exploracao/exploracao.html':
+            case '/pages/exploracao/exploracao.html':
                 page.style.background = "url('./assets/exploracao.png') no-repeat center /cover";
                 page.style.color = "#FFFFFF";
 
