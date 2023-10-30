@@ -17,7 +17,7 @@ export class Routes {
     handle() {
         const { pathname } = window.location;
 
-        const route = this.routes[pathname] || 404;
+        const route = this.routes[pathname] || this.routes[404]; 
 
         fetch(route)
         .then(data => data.text())
@@ -25,23 +25,34 @@ export class Routes {
             document.querySelector("#main").innerHTML = html;
         });
 
-        this.background(pathname);
+        this.background(route);
     }
 
-    background(pathname){
+    background(route){
         const page = document.querySelector(".app");
+        const header = document.querySelector("header");
         
-        switch (pathname) {
-            case '/':
+        switch (route) {
+            case './pages/home/home.html':
                 page.style.background = "url('./assets/home.png') no-repeat center /cover";
+                page.style.color = "#FFFFFF";
                 break;
 
-            case '/oUniverso':
+            case './pages/oUniverso/oUniverso.html':
                 page.style.background = "url('./assets/universo.png') no-repeat center /cover";
+                page.style.color = "#FFFFFF";
                 break;
 
-            case '/exploracao':
+            case './pages/exploracao/exploracao.html':
                 page.style.background = "url('./assets/exploracao.png') no-repeat center /cover";
+                page.style.color = "#FFFFFF";
+
+                break;
+            
+            case './pages/notFound/notFound.html':
+                header.style.display = "none";
+                page.style.background = "#FFFFFF";
+                page.style.color = "#000000";
                 break;
 
             default:
