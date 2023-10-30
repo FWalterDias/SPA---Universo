@@ -22,7 +22,7 @@ export class Routes {
         fetch(route)
         .then(data => data.text())
         .then(html => {
-            document.querySelector("#app").innerHTML = html;
+            document.querySelector("#main").innerHTML = html;
         });
     }
 } 
